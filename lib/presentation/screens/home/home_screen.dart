@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
+
 
 
 
@@ -49,14 +51,15 @@ class _CustomListTile extends StatelessWidget {
 
     return ListTile(
       leading: Icon(menuItem.icon, color: colors.primary),
-      trailing: Icon(Icons.arrow_forward_ios_rounded, color: colors.primary),
       title: Text(menuItem.title),
+      trailing: Icon(Icons.arrow_forward_ios_rounded, color: colors.primary),
       subtitle: Text(menuItem.subTitle),
       onTap: () {
-        
-      },
-    
+        //Navigator.pushNamed(context, menuItem.link);
       
+      context.push(menuItem.link);
+      
+      },
     );
   }
 }
