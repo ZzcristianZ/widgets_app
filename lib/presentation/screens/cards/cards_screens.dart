@@ -42,8 +42,12 @@ class _CardsView extends StatelessWidget {
             (card)=> _CardType1(card['elevation'],card['label'])
           ),
           ...cards.map(
-            (card)=> _CardType1(card['elevation'],card['label'])
-          )
+            (card)=> _CardType2(card['elevation'],card['label'])
+          ),
+          ...cards.map(
+            (card)=> _CardType3(card['elevation'],card['label'])
+          ),
+          SizedBox(height: 50)
         ],
       ),
     );
@@ -73,6 +77,99 @@ class _CardType1 extends StatelessWidget {
               alignment:Alignment.topRight ,
               child: IconButton(
                 icon: const Icon(Icons.more_vert_outlined),
+                onPressed: (){}
+                ),
+            ),
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Text(label),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+class _CardType2 extends StatelessWidget {
+
+  final String label;
+  final double elevation;
+
+
+   const _CardType2(this.elevation,this.label);
+
+
+  @override
+  Widget build(BuildContext context) {
+
+
+  final colors = Theme.of(context).colorScheme;
+
+    return Card(
+      
+      
+      shape: RoundedRectangleBorder(
+        borderRadius:const  BorderRadius.all(Radius.circular(12)),
+        side: BorderSide(color: colors.outline)
+      ),
+      elevation: elevation,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
+        child:Column(
+
+          children: [
+            Align(
+              alignment:Alignment.topRight ,
+              child: IconButton(
+                icon: const Icon(Icons.more_vert_outlined),
+                onPressed: (){}
+                ),
+            ),
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Text('$label - outline'),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+class _CardType3 extends StatelessWidget {
+
+
+
+  final String label;
+  final double elevation;
+
+
+  const _CardType3(this.elevation,this.label);
+
+
+  @override
+  Widget build(BuildContext context) {
+
+
+  final colors = Theme.of(context).colorScheme;
+
+
+    return Card(
+      color: colors.onSurfaceVariant,
+      elevation: elevation,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
+        child:Column(
+
+          children: [
+            Align(
+              alignment:Alignment.topRight ,
+              child: IconButton(
+                icon:  Icon(Icons.more_vert_outlined,color: colors.onSurface),
                 onPressed: (){}
                 ),
             ),
