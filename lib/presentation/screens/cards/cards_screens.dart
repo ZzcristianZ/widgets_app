@@ -159,26 +159,35 @@ class _CardType3 extends StatelessWidget {
 
 
     return Card(
+      clipBehavior: Clip.hardEdge,
       color: colors.onSurfaceVariant,
       elevation: elevation,
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
-        child:Column(
+      child: Stack(
+      
+        children: [
+          Image.network(
+            'http://picsum.photos/id/${elevation.toInt()}/600/350',
+            height: 250,
+            fit: BoxFit.cover,
 
-          children: [
-            Align(
-              alignment:Alignment.topRight ,
+          ),
+
+
+          Align(
+            alignment:Alignment.topRight ,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20))
+              ),
               child: IconButton(
                 icon:  Icon(Icons.more_vert_outlined,color: colors.onSurface),
                 onPressed: (){}
                 ),
             ),
-            Align(
-              alignment: Alignment.bottomLeft,
-              child: Text(label),
-            )
-          ],
-        ),
+          ),
+          
+        ],
       ),
     );
   }
