@@ -47,4 +47,12 @@ const appMenuItems = <MenuItems>[
     icon: Icons.info_outline
   ),
 
+
+  MenuItems(
+    title: 'Screen de animaciones', 
+    subTitle: 'Formas Y Figuras', 
+    link: '/AnimatedScreen', 
+    icon: Icons.animation
+  ),
+
 ];
