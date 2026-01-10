@@ -55,4 +55,20 @@ const appMenuItems = <MenuItems>[
     icon: Icons.animation
   ),
 
+  MenuItems(
+    title: 'UI Controls', 
+    subTitle: 'Serie de Controles', 
+    link: '/UiControlsScreen', 
+    icon: Icons.comment_rounded
+  ),
+  
+  MenuItems(
+    title: 'Introduccion a la App', 
+    subTitle: 'Turorial de la app', 
+    link: '/AppTutorialScreen', 
+    icon: Icons.accessibility_new_rounded
+  ),
+
 ];
+
+
