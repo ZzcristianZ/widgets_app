@@ -26,11 +26,12 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
     height = random.nextInt(300) + 120;
     borderRadius = random.nextDouble() * 50;
     color = Color.fromARGB(
+
+      255, 
       random.nextInt(255), 
       random.nextInt(255), 
-      random.nextInt(255), 
-      1);
-    
+      random.nextInt(255)
+    );
     setState(() {});
   }
 
@@ -44,7 +45,7 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
 
       body: Center(
         child: AnimatedContainer(
-          duration: Duration(milliseconds: 400),
+          duration: Duration(milliseconds: 600),
           curve: Curves.elasticOut,
           width: width <= 0 ? 0 : width,
           height: height <= 0 ? 0 : height,
