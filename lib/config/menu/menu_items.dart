@@ -69,6 +69,13 @@ const appMenuItems = <MenuItems>[
     icon: Icons.accessibility_new_rounded
   ),
 
+  MenuItems(
+    title: 'InfiniteScrool y Pull', 
+    subTitle: 'Listas infinitas y pull to refresh', 
+    link: '/InfiniteScrool', 
+    icon: Icons.list_alt_rounded
+  ),
+
 ];
 
 
