@@ -1,3 +1,5 @@
+
+export 'package:widgets_app/presentation/screens/counter/counter_screen.dart';
 export 'buttons/buttons_screen.dart';
 export 'cards/cards_screens.dart';
 export 'home/home_screen.dart';
@@ -7,3 +9,4 @@ export 'ui_controls/ui_controls_screen.dart';
 export 'snackbar/snackbar_screen.dart';
 export 'progress/progress_screen.dart';
 export 'infinite_scroll/infinite_scrool.dart';
+export '../../presentation/screens/theme_changer/theme_changer_screen.dart';

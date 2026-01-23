@@ -76,17 +76,7 @@ class _SideMenuState extends State<SideMenu> {
             padding:  EdgeInsets.fromLTRB(28, 16, 16, 10),
             child: Divider(),
           ),
-
-        const NavigationDrawerDestination(
-          icon: Icon(Icons.add), 
-          label:  Text('Home Screen')
-        ),
-
-
-        const NavigationDrawerDestination(
-          icon: Icon(Icons.more_horiz_sharp), 
-          label:  Text('More destination')
-        ),
+        
       ],
     );
   }
