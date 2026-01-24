@@ -63,8 +63,13 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    final isdark = Theme.of(context).brightness;
+
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: isdark == Brightness.dark
+      ?Colors.black
+      :Colors.white,
       body: Stack(
         children: [
           PageView(
