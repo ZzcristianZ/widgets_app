@@ -16,17 +16,17 @@ class ThemeChangerScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
 
-    final isDarkMode = ref.watch(isDarkModeProvider);
+    final isDarkMode = ref.watch(themeNotifierProvider).isDarkMode;
 
     return Scaffold(
       appBar: AppBar(
         title: Text('Theme Changer'),
         actions: [IconButton(
         icon:  isDarkMode
-        ?Icon(Icons.light_mode_rounded)
-        :Icon(Icons.dark_mode_rounded),
+        ?Icon(Icons.dark_mode_rounded)
+        :Icon(Icons.light_mode_rounded),
         onPressed: (){
-          ref.read(isDarkModeProvider.notifier).state=!isDarkMode;
+          ref.read(themeNotifierProvider.notifier).toogleDarkMode();
         }
         )],
       ),
@@ -42,12 +42,12 @@ class _ThemeChangerView extends ConsumerWidget {
   Widget build(BuildContext context, ref) {
 
     final List<Color> colortheme = ref.watch(colorListProvider);
-    final int selectedColor = ref.watch(selectedColorProvider);
+    final int selectedColor = ref.watch( themeNotifierProvider ).selectedColor;
 
     return ListView.builder(
       itemCount: colortheme.length,
       itemBuilder:  (context, index) {
-        final color = colortheme[index];
+        final Color color = colortheme[index];
         return RadioListTile(
           title: Text('Este color',style: TextStyle(color: color),),
           subtitle: Text('${color.g}'),
@@ -55,7 +55,7 @@ class _ThemeChangerView extends ConsumerWidget {
           activeColor: color,
           groupValue: selectedColor,
           onChanged: (value) {
-            ref.read(selectedColorProvider.notifier).state = index;
+            ref.watch(themeNotifierProvider.notifier).changeColorIndex(index);
           },
         );
       },
